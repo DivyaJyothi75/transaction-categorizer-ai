@@ -1,2 +1,38 @@
-transaction,amount,category
-Starbucks,5.25,Coffee
+transaction,category
+Starbucks Coffee,Coffee
+Starbucks Latte,Coffee
+Cafe Coffee Day,Coffee
+Barista Cappuccino,Coffee
+Dominos Pizza,Food
+KFC Order,Food
+McDonalds Meal,Food
+Burger King Combo,Food
+Amazon Purchase,Shopping
+Flipkart Order,Shopping
+Myntra Clothing,Shopping
+Ajio Fashion,Shopping
+Shell Fuel,Transport
+HP Petrol,Fuel
+Indian Oil Fuel,Fuel
+Uber Ride,Transport
+Ola Ride,Transport
+Swiggy Payment,Food
+Zomato Order,Food
+Reliance Trends,Shopping
+Big Bazaar Grocery,Grocery
+DMart Grocery,Grocery
+Spencers Retail,Grocery
+MedPlus Pharmacy,Health
+Apollo Pharmacy,Health
+Netmeds Order,Health
+Tanishq Jewellery,Shopping
+Lifestyle Store,Shopping
+BookMyShow Tickets,Entertainment
+PVR Cinema,Entertainment
+Spotify Subscription,Entertainment
+YouTube Premium,Entertainment
+AirAsia Flight,Travel
+IndiGo Flight,Travel
+MakeMyTrip Booking,Travel
+IRCTC Train Ticket,Travel
+Toll Plaza Payment,Transport
