@@ -6,3 +6,4 @@ def home():
   return"Transaction Categorization AI App is running!"
 
 if__name__== "__main__": app.run(debug=True)
+
