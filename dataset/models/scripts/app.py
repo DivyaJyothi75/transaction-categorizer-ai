@@ -1,25 +1,39 @@
 from flask import Flask, request, jsonify
 import joblib
-
+import os
+ 
+# Initialize Flask app
 app = Flask(__name__)
-
-model = joblib.load("models/model.pkl")
-vectorizer = joblib.load("models/vectorizer.pkl")
-
+ 
+# Base directory for models
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'models'))
+ 
+# Load pre-trained model and vectorizer
+model = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
+vectorizer = joblib.load(os.path.join(BASE_DIR, "vectorizer.pkl"))
+ 
 @app.route("/predict", methods=["POST"])
 def predict():
+    """
+    Endpoint to predict the category of a transaction.
+    Expects JSON input: {"transaction": "<transaction text>"}
+    Returns JSON output with predicted category and confidence.
+    """
     data = request.get_json()
     text = data.get("transaction", "")
-
+ 
+    # Transform input text and predict
     vector = vectorizer.transform([text])
     prediction = model.predict(vector)[0]
     confidence = max(model.predict_proba(vector)[0])
-
+ 
     return jsonify({
         "transaction": text,
         "predicted_category": prediction,
         "confidence": round(float(confidence), 4)
     })
-
+ 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Run Flask app on all IPs so it is accessible via EC2 public IP
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
