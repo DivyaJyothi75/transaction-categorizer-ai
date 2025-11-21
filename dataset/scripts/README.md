@@ -1,0 +1,9 @@
+curl -X POST http://<EC2_PUBLIC_IP>:5000/predict \
+-H "Content-Type: application/json" \
+-d '{"transaction": "Bought groceries for $50"}'
+
+{
+  "transaction": "Bought groceries for $50",
+  "predicted_category": "Shopping",
+  "confidence": 0.1945
+}
